@@ -1,8 +1,8 @@
 import React from 'react';
 import "./userList.css"
 import { DataGrid } from '@mui/x-data-grid';
-/*import { ReportGmailerrorred } from '@mui/icons-material';*/
 import {DeleteOutline, } from "@mui/icons-material";
+import {userRows} from '../../dummyData';
 
 export default function UserList() {
     const columns = [
@@ -39,89 +39,20 @@ export default function UserList() {
                     <button className="userListEdit">Edit</button>
                     <DeleteOutline className= "userListDelete"/>
 </div>
-                )
-            }
-        }
+                );
+            },
+        },
        
-      ];
-      
-      const rows = [
-    
-        {  id: 1  ,
-            username: 'Jon Snow',
-              avatar: "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-             email: "jon@gmail.com",
-             status: "active",
-             transaction: "$120.00",
-       }, 
-    {  id: 2,
-        username: 'Jon Snow',
-          avatar: "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-         email: "jon@gmail.com",
-         status: "active",
-         transaction: "$120.00",
-   }, 
-{ id: 3,
-    username: 'Jon Snow',
-     avatar: "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-{ id: 4,
-    username: 'Jon Snow',
-     avatar:  "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-{ id: 5,
-    username: 'Jon Snow',
-     avatar: "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-{ id: 6,
-    username: 'Jon Snow',
-     avatar:  "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-{ id: 7,
-    username: 'Jon Snow',
-     avatar:  "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-{ id: 8,
-    username: 'Jon Snow',
-     avatar:  "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-{ id: 9,
-    username: 'Jon Snow',
-     avatar: "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-{ id: 10,
-    username: 'Jon Snow',
-     avatar: "https://www.pexels.com/photo/man-in-black-suit-jacket-5308640/",
-     email: "jon@gmail.com",
-     status: "active",
-     transaction: "$120.00",
-}, 
-
-];
+      ];  
   return (
-    <div className="userList"nj>
-         <DataGrid rows={rows} columns={columns} pageSize={5} rowsPerPageOptions={[5]}checkboxSelection />
+    <div className="userList">
+         <DataGrid 
+         rows={ userRows} 
+         disableSelectionOnClick 
+         columns={columns} 
+         pageSize={8} 
+         rowsPerPageOptions={[5]}
+         checkboxSelection />
     </div>
   );
 
